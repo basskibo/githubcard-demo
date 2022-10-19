@@ -1,5 +1,8 @@
 # Getting Started with Create React App
 
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/b4f80343-c1b7-4592-9bd4-271658144672/deploy-status)](https://app.netlify.com/sites/stirring-buttercream-77e444/deploys)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
