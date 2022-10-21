@@ -9,9 +9,6 @@ const GithubCard = ({ name, repository, type, widht, height }: IProps) => {
     const [profile, setProfile] = useState<IProfile | null>(null);
     const [repo, setRepository] = useState<IRepository | null>(null);
 
-    // const { name, repository, type, widht, height, useCache = false } = props
-
-
     useEffect(() => {
         let url: string;
         if (type === "user" || type === "profile") {
@@ -19,9 +16,6 @@ const GithubCard = ({ name, repository, type, widht, height }: IProps) => {
         } else {
             url = `https://api.github.com/repos/${name || "basskibo"}/${repository || "github-user-repo-card"}`;
         }
-        console.log("url \n\n")
-        console.log(url)
-
 
         const fetchData = async () => {
             try {
@@ -46,7 +40,7 @@ const GithubCard = ({ name, repository, type, widht, height }: IProps) => {
                 } else {
                     setRepository(dataFetched)
                 }
-                console.log(repo)
+                console.log(dataFetched)
             } catch (error) {
                 console.log("error", error);
             }
@@ -65,20 +59,18 @@ const GithubCard = ({ name, repository, type, widht, height }: IProps) => {
             <> {
                 (profile && (type === "user" || type === "profile")) ? (
                     <GithubProfileCard html_url={profile.html_url} login={profile.login} avatar_url={profile.avatar_url} following={profile.following}
-                        followers={profile.followers} public_repos={profile.public_repos} total_private_repos={profile.total_private_repos} bio={profile.bio} location={profile.location}></GithubProfileCard>
+                        followers={profile.followers} public_repos={profile.public_repos} public_gists={profile.public_gists} bio={profile.bio} location={profile.location} name={profile.name}></GithubProfileCard>
                 ) : (
                     <></>
                 )
 
             }</>
-            <>{repo ? (<GithubRepoCard html_url={repo.html_url} name={repo.name} description={repo.description} language={repo.language} stargazers_count={repo?.stargazers_count || 0}></GithubRepoCard>
+            <>{repo ? (<GithubRepoCard html_url={repo.html_url} name={repo.name} description={repo.description} language={repo.language}
+                stargazers_count={repo?.stargazers_count || 0} forks_count={repo?.forks_count} watchers={repo?.watchers}></GithubRepoCard>
             ) : <></>}</>
 
         </div >
     );
 }
-
-
-
 
 export default GithubCard;

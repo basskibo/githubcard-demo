@@ -39,11 +39,11 @@ function App() {
           </div>
           <div>
             <p className="card-label">With increased width and length</p>
-            <GithubCard name="mcollina" type="user" repository="blogtech_dev" widht={350} height={370} />
+            <GithubCard name="mcollina" type="user" repository="blogtech_dev" widht={350} height={400} />
           </div>
           <div>
             <p className="card-label">With reduced width and length</p>
-            <GithubCard name="RodaBVB" type="user" repository="blogtech_dev" widht={220} height={320} />
+            <GithubCard name="RodaBVB" type="user" repository="blogtech_dev" widht={220} height={330} />
           </div>
 
         </div>
@@ -51,17 +51,22 @@ function App() {
 
         <div style={{ display: "inline-flex", gap: 15 }}>
           <div>
-            <p className="card-label">Default</p>
+            <p className="card-label">Mini card </p>
             <GithubCard name="basskibo" type="repo" repository="github-user-repo-card" widht={500} height={150} />
           </div>
           <div>
-            <p className="card-label">With larger height</p>
-            <GithubCard name="basskibo" type="repo" repository="blog_tech_dev" widht={500} height={150} />
+            <p className="card-label">Default </p>
+            <GithubCard name="basskibo" type="repo" repository="blog_tech_dev" widht={300} height={150} />
           </div>
-
+          <div>
+            <p className="card-label">With larger widht</p>
+            <GithubCard name="freeCodeCamp" type="repo" repository="freeCodeCamp" widht={650} height={150} />
+          </div>
 
         </div>
 
+        <h3>Try it yourself</h3>
+        <p>Cooming soon...</p>
       </header>
     </div>
   );

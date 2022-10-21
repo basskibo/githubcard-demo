@@ -9,3 +9,9 @@
 .flex-gap>div {
   margin: 26px;
 }
+
+.icon,
+.text {
+  vertical-align: middle;
+  display: inline-block;
+}
